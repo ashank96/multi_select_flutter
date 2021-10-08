@@ -129,7 +129,9 @@ class MultiSelectChipDisplay<V> extends StatelessWidget {
   Widget _buildItem(MultiSelectItem<V> item, BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(2.0),
-      child: ChoiceChip(
+      child: Card(elevation: 5, shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ), child: ChoiceChip(
         shape: shape as OutlinedBorder?,
         avatar: icon != null
             ? Icon(
@@ -167,7 +169,7 @@ class MultiSelectChipDisplay<V> extends StatelessWidget {
         onSelected: (_) {
           if (onTap != null) onTap!(item.value);
         },
-      ),
+      )),
     );
   }
 }
